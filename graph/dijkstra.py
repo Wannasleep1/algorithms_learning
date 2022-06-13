@@ -15,7 +15,7 @@ def find_lowest_cost_node(ways_cost_array, explored):
 def get_path_dijkstra(start_, end_, parents):
     path = [end_]
     while end_ != start_:
-        end_ = parents[path[-1]]
+        end_ = parents[end_]
         path.append(end_)
     return list(reversed(path))
 

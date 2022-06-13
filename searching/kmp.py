@@ -60,6 +60,9 @@ def all_matches_kmp(prefix_func, pattern, text):
 
 if __name__ == "__main__":
     text = "лилилось лилилась"
-    pattern = "лилил"
-    result = all_matches_kmp(get_prefix_list, pattern, text)
+    pattern = "лилила"
+    pattern_all = "лилил"
+    result = simple_kmp(get_prefix_list, pattern, text)
+    result_all = all_matches_kmp(get_prefix_list, pattern_all, text)
     print(result)
+    print(result_all)

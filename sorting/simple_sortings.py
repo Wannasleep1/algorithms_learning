@@ -1,9 +1,9 @@
 # Selection sort
 def selection_sort(array):
-    length = len(array)
-    for i in range(length):
+    array_length = len(array)
+    for i in range(array_length):
         lowest_value_index = i
-        for j in range(i + 1, length):
+        for j in range(i + 1, array_length):
             if array[j] < array[lowest_value_index]:
                 lowest_value_index = j
         array[i], array[lowest_value_index] = array[lowest_value_index], array[i]
@@ -11,8 +11,8 @@ def selection_sort(array):
 
 # Insertion sort
 def insertion_sort(array):
-    length = len(array)
-    for i in range(1, length):
+    array_length = len(array)
+    for i in range(1, array_length):
         item_to_insert = array[i]
         j = i - 1
         while j >= 0 and array[j] > item_to_insert:

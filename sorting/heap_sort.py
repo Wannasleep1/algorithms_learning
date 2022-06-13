@@ -1,26 +1,20 @@
-def heapify(array, heap_size, root_index):
-    largest = root_index
-    left_child = 2 * root_index + 1
-    right_child = 2 * root_index + 2
-    if left_child < heap_size and array[right_child] > array[largest]:
-        largest = left_child
-    if right_child < heap_size and array[right_child] > array[largest]:
-        largest = right_child
-    if largest != root_index:
-        array[root_index], array[largest] = array[largest], array[root_index]
-        heapify(array, heap_size, largest)
+from heapq import heappop, heappush, heapify
 
 
-def heap_sort(array):
-    length = len(array)
-    for i in range(length, -1, -1):
-        heapify(array, length, i)
-    for i in range(length-1, 0, -1):
-        array[i], array[0] = array[0], array[i]
-        heapify(array, length, 0)
+def heap_sort(lst):
+    heap = []
+    for ele in lst:
+        heappush(heap, ele)
+
+    sort = []
+
+    while heap:
+        sort.append(heappop(heap))
+
+    return sort
 
 
 if __name__ == "__main__":
-    lst = [4, 51, -1, 0, -3, 4, 1]
-    heap_sort(lst)
-    print(lst)
+    some_lst = [4, 51, -1, 0, -3, 4, 1]
+    heapify(some_lst)
+    print(heap_sort(some_lst))

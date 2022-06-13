@@ -24,7 +24,6 @@ def quick_sort(array, start=0, end=None):
 
     if end is None:
         end = len(array) - 1
-
     if end - start < 1:
         return
 
@@ -36,4 +35,5 @@ def quick_sort(array, start=0, end=None):
 
 if __name__ == "__main__":
     lst = [4, 51, -1, 0, -3, 4, 1]
-    print(quick_sort(lst))
+    quick_sort(lst)
+    print(lst)
